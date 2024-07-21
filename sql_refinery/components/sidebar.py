@@ -13,48 +13,16 @@ def sidebar_header() -> rx.Component:
     """
     return rx.hstack(
         # The logo.
-        rx.color_mode_cond(
-            rx.image(src="/reflex_black.svg", height="2em"),
-            rx.image(src="/reflex_white.svg", height="2em"),
-        ),
-        rx.spacer(),
-        rx.link(
-            rx.button(
-                rx.icon("github"),
-                color_scheme="gray",
-                variant="soft",
-            ),
-            href="https://github.com/reflex-dev/reflex",
-        ),
+        #rx.color_mode_cond(
+        #    rx.image(src="/reflex_black.svg", height="2em"),
+        #    rx.image(src="/reflex_white.svg", height="2em"),
+        #),
+        rx.image(src="/logo.png", height="12em"),
         align="center",
         width="100%",
         border_bottom=styles.border,
         padding_x="1em",
         padding_y="2em",
-    )
-
-
-def sidebar_footer() -> rx.Component:
-    """Sidebar footer.
-
-    Returns:
-        The sidebar footer component.
-    """
-    return rx.hstack(
-        rx.spacer(),
-        rx.link(
-            rx.text("Docs"),
-            href="https://reflex.dev/docs/getting-started/introduction/",
-            color_scheme="gray",
-        ),
-        rx.link(
-            rx.text("Blog"),
-            href="https://reflex.dev/blog/",
-            color_scheme="gray",
-        ),
-        width="100%",
-        border_top=styles.border,
-        padding="1em",
     )
 
 
@@ -129,7 +97,6 @@ def sidebar() -> rx.Component:
                 padding="1em",
             ),
             rx.spacer(),
-            sidebar_footer(),
             height="100dvh",
         ),
         display=["none", "none", "block"],
